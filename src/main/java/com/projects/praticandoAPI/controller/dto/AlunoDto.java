@@ -3,7 +3,7 @@ package com.projects.praticandoAPI.controller.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//import com.projects.praticandoAPI.modelo.Aluno;
+import com.projects.praticandoAPI.modelo.Aluno;
 
 public class AlunoDto {
 
@@ -37,7 +37,7 @@ public class AlunoDto {
 	}
 	
 	public static List<AlunoDto> converter(List<Aluno> alunos) {
-		return alunos.stream().map(UsuarioDto::new).collect(Collectors.toList());
+		return alunos.stream().map(AlunoDto::new).collect(Collectors.toList());
 	}
 
 }
