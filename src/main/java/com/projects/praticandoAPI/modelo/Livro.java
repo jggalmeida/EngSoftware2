@@ -27,7 +27,7 @@ public class Livro implements Serializable{
 
 
 	@ManyToOne
-    @JoinColumn(name="ID_EDITORA")
+    //@JoinColumn(name="ID_EDITORA")
     private Editora editora;
 
     @ManyToMany

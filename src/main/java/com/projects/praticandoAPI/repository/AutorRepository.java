@@ -9,5 +9,6 @@ import com.projects.praticandoAPI.modelo.Autor;
 public interface AutorRepository extends JpaRepository<Autor, Long> {
 
 	List<Autor> findByNome(String nomeAutor);
+	List<Autor> findAll(String autor);
 
 }

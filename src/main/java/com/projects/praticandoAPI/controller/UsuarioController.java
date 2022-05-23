@@ -15,7 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.projects.praticandoAPI.controller.dto.AutorDto;
 import com.projects.praticandoAPI.controller.dto.UsuarioDto;
-import com.projects.praticandoAPI.controller.form.TopicoForm;
+import com.projects.praticandoAPI.controller.form.AutorForm;
 import com.projects.praticandoAPI.controller.form.UsuarioForm;
 import com.projects.praticandoAPI.modelo.Topico;
 import com.projects.praticandoAPI.modelo.Usuario;
