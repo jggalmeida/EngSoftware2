@@ -2,7 +2,7 @@ package com.projects.praticandoAPI.controller.form;
 
 import com.projects.praticandoAPI.modelo.Curso;
 import com.projects.praticandoAPI.modelo.Topico;
-import com.projects.praticandoAPI.repository.CursoRepository;
+import com.projects.praticandoAPI.repository.AutorRepository;
 
 public class TopicoForm {
 
@@ -34,7 +34,7 @@ public class TopicoForm {
 		this.nomeCurso = nomeCurso;
 	}
 
-	public Topico converter(CursoRepository cursoRepository) {
+	public Topico converter(AutorRepository cursoRepository) {
 		Curso curso = cursoRepository.findByNome(nomeCurso);
 		return new Topico(titulo, mensagem, curso);
 	}
