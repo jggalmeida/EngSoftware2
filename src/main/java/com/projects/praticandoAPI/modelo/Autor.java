@@ -6,76 +6,66 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.OneToMany;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Autor implements Serializable{
-	
+public class Autor implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
-	@Id 
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAutor;
 	private String nomeAutor;
-    private String nacionalidadeAutor;
+	private String nacionalidadeAutor;
 
-
-	@ManyToMany
-    @JoinTable(
-        name="LivrosAutores",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"idAutor", "idLivro"}),
-        joinColumns = @JoinColumn(name = "idAutor"),
-        inverseJoinColumns = @JoinColumn(name = "idLivro")
-    )
-    private List<Livro> livros;
+	@OneToMany(mappedBy = "autor")
+	private List<Livro> livros = new ArrayList<>();
 
 	public Object idLivro;
 
 	public Object idEditora;
 
-
 	public Autor(String nomeAutor, String nacionalidadeAutor) {
 		this.nomeAutor = nomeAutor;
 		this.nacionalidadeAutor = nacionalidadeAutor;
 	}
-	
+
 	public Long getIdAutor() {
-        return idAutor;
-    }
+		return idAutor;
+	}
 
-    public void setIdAutor(Long idAutor) {
-        this.idAutor = idAutor;
-    }
+	public void setIdAutor(Long idAutor) {
+		this.idAutor = idAutor;
+	}
 
-    public String getNomeAutor() {
-        return nomeAutor;
-    }
+	public String getNomeAutor() {
+		return nomeAutor;
+	}
 
-    public void setNomeAutor(String nomeAutor) {
-        this.nomeAutor = nomeAutor;
-    }
+	public void setNomeAutor(String nomeAutor) {
+		this.nomeAutor = nomeAutor;
+	}
 
-    public String getNacionalidadeAutor() {
-        return nacionalidadeAutor;
-    }
+	public String getNacionalidadeAutor() {
+		return nacionalidadeAutor;
+	}
 
-    public void setNacionalidadeAutor(String nacionalidadeAutor) {
-        this.nacionalidadeAutor = nacionalidadeAutor;
-    }
+	public void setNacionalidadeAutor(String nacionalidadeAutor) {
+		this.nacionalidadeAutor = nacionalidadeAutor;
+	}
 
 	public List<Livro> getLivros() {
-        return livros;
-    }
+		return livros;
+	}
 
-    public void setLivros(List<Livro> livros) {
-        this.livros = livros;
-    }
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
+	}
 
 	@Override
 	public int hashCode() {
@@ -102,7 +92,4 @@ public class Autor implements Serializable{
 		return true;
 	}
 
-
 }
-
-

@@ -6,41 +6,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.UniqueConstraint;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-public class Livro implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+public class Livro implements Serializable {
 
-	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLivro;
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idLivro;
     private String nomeLivro;
 
-
-	@ManyToOne
-    //@JoinColumn(name="ID_EDITORA")
+    @ManyToOne
     private Editora editora;
 
-    @ManyToMany
-    @JoinTable(
-        name="LivrosAutores",
-        uniqueConstraints = @UniqueConstraint(columnNames = {"idAutor", "idLivro"}),
-        joinColumns = @JoinColumn(name = "idLivro"),
-        inverseJoinColumns = @JoinColumn(name = "idAutor")
-    )
-    private List<Autor> autores;
+    @ManyToOne
+    private Autor autor;
 
-	
-	public Long getIdLivro() {
+    public Livro(String nomeLivro, Editora editora, Autor autor) {
+        this.nomeLivro = nomeLivro;
+        this.editora = editora;
+        this.autor = autor;
+    }
+
+    public Long getIdLivro() {
         return idLivro;
     }
 
@@ -64,40 +56,37 @@ public class Livro implements Serializable{
         this.editora = editora;
     }
 
-	public List<Autor> getAutores() {
-        return autores;
+    public Autor getAutor() {
+        return autor;
     }
 
-    public void setAutores(List<Autor> autores) {
-        this.autores = autores;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((idLivro == null) ? 0 : idLivro.hashCode());
-		return result;
-	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((idLivro == null) ? 0 : idLivro.hashCode());
+        return result;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Autor other = (Autor) obj;
-		if (idLivro == null) {
-			if (other.idLivro != null)
-				return false;
-		} else if (!idLivro.equals(other.idLivro))
-			return false;
-		return true;
-	}
-
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Autor other = (Autor) obj;
+        if (idLivro == null) {
+            if (other.idLivro != null)
+                return false;
+        } else if (!idLivro.equals(other.idLivro))
+            return false;
+        return true;
+    }
 
 }
-
-

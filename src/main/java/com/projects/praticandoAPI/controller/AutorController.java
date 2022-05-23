@@ -23,16 +23,16 @@ import com.projects.praticandoAPI.repository.AutorRepository;
 
 @RequestMapping("/autores")
 public class AutorController {
-	
+
 	@Autowired
 	private AutorRepository autorRepository;
-	
-	//@Autowired
-	//private EditoraRepository editoraRepository;
-	
-	//@Autowired
-	//private LivroRepository livroRepository;
-	
+
+	// @Autowired
+	// private EditoraRepository editoraRepository;
+
+	// @Autowired
+	// private LivroRepository livroRepository;
+
 	@GetMapping
 	public List<AutorDto> lista(String nomeAutor) {
 		if (nomeAutor == null) {
@@ -43,12 +43,12 @@ public class AutorController {
 			return AutorDto.converter(autores);
 		}
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<AutorDto> cadastrar(@RequestBody AutorForm form, UriComponentsBuilder uriBuilder) {
 		Autor autor = form.converter(autorRepository);
 		autorRepository.save(autor);
-		
+
 		URI uri = uriBuilder.path("/autor/{id}").buildAndExpand(autor.getIdAutor()).toUri();
 		return ResponseEntity.created(uri).body(new AutorDto(autor));
 	}

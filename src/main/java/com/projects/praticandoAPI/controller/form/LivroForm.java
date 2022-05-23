@@ -5,13 +5,14 @@ import java.util.List;
 import com.projects.praticandoAPI.modelo.Autor;
 import com.projects.praticandoAPI.modelo.Editora;
 import com.projects.praticandoAPI.repository.AutorRepository;
+import com.projects.praticandoAPI.repository.EditoraRepository;
+import com.projects.praticandoAPI.repository.LivroRepository;
 
 public class LivroForm {
 
 	private String nomeLivro;
-	private String editora;
-	private List<String> autores;
-
+	private String nomeEditora;
+	private String nomeAutor;
 
 	public String getNomeLivro() {
 		return nomeLivro;
@@ -21,27 +22,26 @@ public class LivroForm {
 		this.nomeLivro = nomeLivro;
 	}
 
-	public String getEditora() {
-		return editora;
+	public String getNomeEditora() {
+		return nomeEditora;
 	}
 
-	public void setEditora(String editora) {
-		this.editora = editora;
+	public void setNomeEditora(String nomeEditora) {
+		this.nomeEditora = nomeEditora;
 	}
 
-	public List<String> getAutores() {
-		List<Autor> autores = AutorRepository.findAll(autores);
-		return autores;
+	public String getNomeAutor() {
+		return nomeAutor;
 	}
 
-	public void setNomeCurso(String nomeCurso) {
-		this.nomeCurso = nomeCurso;
+	public void setNomeAutor(String nomeAutor) {
+		this.nomeAutor = nomeAutor;
 	}
 
-
-	public Autor converter(AutorRepository autorRepository) {
-		//Curso curso = cursoRepository.findByNome(nomeCurso);
-		return new Autor(nomeAutor, nacionalidadeAutor);
+	public Livro converter(LivroRepository livroRepository) {
+		// Editora editora = EditoraRepository.findByNomeEditora(nomeEditora);
+		Autor autor = AutorRepository.findByNomeAutor(nomeAutor);
+		return new Livro(nomeLivro, editora, autor);
 	}
 
 }
