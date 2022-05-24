@@ -29,6 +29,11 @@ public class Editora implements Serializable{
     //@JoinColumn(name="ID_EDITORA")
     private List <Livro> livros = new ArrayList<>();
 
+    public Editora(String nomeEditora, String paisEditora) {
+        this.nomeEditora = nomeEditora;
+        this.paisEditora = paisEditora;
+    }
+
 	
 	public Long getIdEditora() {
         return idEditora;
