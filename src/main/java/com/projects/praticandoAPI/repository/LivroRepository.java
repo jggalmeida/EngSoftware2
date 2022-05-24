@@ -9,5 +9,6 @@ import com.projects.praticandoAPI.modelo.Livro;
 public interface LivroRepository extends JpaRepository<Livro, Long>{
 
     List<Livro> findByEditora(String nomeEditora);
+    List<Livro> findByNome(String nomeLivro);
 	
 }
