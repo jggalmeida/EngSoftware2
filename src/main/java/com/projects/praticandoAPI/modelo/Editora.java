@@ -26,7 +26,6 @@ public class Editora implements Serializable{
 
 
 	@OneToMany(mappedBy = "editora")
-    //@JoinColumn(name="ID_EDITORA")
     private List <Livro> livros = new ArrayList<>();
 
     public Editora(String nomeEditora, String paisEditora) {
@@ -83,7 +82,7 @@ public class Editora implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Autor other = (Autor) obj;
+		Editora other = (Editora) obj;
 		if (idEditora == null) {
 			if (other.idEditora != null)
 				return false;

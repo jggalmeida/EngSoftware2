@@ -26,9 +26,9 @@ public class Livro implements Serializable {
     @ManyToOne
     private Autor autor;
 
-    public Livro(String nomeLivro, Editora editora, Autor autor) {
+    public Livro(String nomeLivro, Autor autor) {
         this.nomeLivro = nomeLivro;
-        this.editora = editora;
+        //this.editora = editora;
         this.autor = autor;
     }
 
@@ -80,7 +80,7 @@ public class Livro implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Autor other = (Autor) obj;
+        Livro other = (Livro) obj;
         if (idLivro == null) {
             if (other.idLivro != null)
                 return false;

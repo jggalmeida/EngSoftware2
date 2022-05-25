@@ -39,8 +39,9 @@ public class AutorController {
 			List<Autor> autores = autorRepository.findAll();
 			return AutorDto.converter(autores);
 		} else {
-			List<Autor> autores = autorRepository.findByNome(nomeAutor);
-			return AutorDto.converter(autores);
+			//List<Autor> autores = autorRepository.findByNome(nomeAutor);
+			//return AutorDto.converter(autores);
+			return null;
 		}
 	}
 

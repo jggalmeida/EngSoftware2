@@ -1,10 +1,10 @@
 package com.projects.praticandoAPI.controller.form;
 
 import com.projects.praticandoAPI.modelo.Autor;
-import com.projects.praticandoAPI.modelo.Editora;
+//import com.projects.praticandoAPI.modelo.Editora;
 import com.projects.praticandoAPI.modelo.Livro;
 import com.projects.praticandoAPI.repository.AutorRepository;
-import com.projects.praticandoAPI.repository.EditoraRepository;
+//import com.projects.praticandoAPI.repository.EditoraRepository;
 import com.projects.praticandoAPI.repository.LivroRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class LivroForm {
 	@Autowired
 	private AutorRepository autorRepository;
 
-	@Autowired
-	private EditoraRepository editoraRepository;
+	//@Autowired
+	//private EditoraRepository editoraRepository;
 
 	public String getNomeLivro() {
 		return nomeLivro;
@@ -46,9 +46,9 @@ public class LivroForm {
 	}
 
 	public Livro converter(LivroRepository livroRepository) {
-		Editora editora = editoraRepository.findByNome(nomeEditora);
+		//Editora editora = editoraRepository.findByNome(nomeEditora);
 		Autor autor = autorRepository.findByNomeAutor(nomeAutor);
-		return new Livro(nomeLivro, editora, autor);
+		return new Livro(nomeLivro, autor);
 	}
 
 }

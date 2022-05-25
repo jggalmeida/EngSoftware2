@@ -39,8 +39,9 @@ public class LivroController {
 			List<Livro> livros = livroRepository.findAll();
 			return LivroDto.converter(livros);
 		} else {
-			List<Livro> livros = livroRepository.findByNome(nomeLivro);
-			return LivroDto.converter(livros);
+			//List<Livro> livros = livroRepository.findByNome(nomeLivro);
+			//return LivroDto.converter(livros);
+			return null;
 		}
 	}
 

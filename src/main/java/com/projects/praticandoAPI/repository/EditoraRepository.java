@@ -8,5 +8,5 @@ import com.projects.praticandoAPI.modelo.Editora;
 
 public interface EditoraRepository extends JpaRepository<Editora, Long> {
 	List<Editora> findByNomeEditora(String nomeEditora);
-	Editora findByNome(String nomeEditora);
+	//Editora findByNome(String nomeEditora);
 }
