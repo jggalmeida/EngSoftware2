@@ -32,6 +32,9 @@ public class Editora implements Serializable{
         this.nomeEditora = nomeEditora;
         this.paisEditora = paisEditora;
     }
+    
+    public Editora(){
+	}
 
 	
 	public Long getIdEditora() {
