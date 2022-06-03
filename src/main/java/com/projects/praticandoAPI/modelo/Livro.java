@@ -28,8 +28,11 @@ public class Livro implements Serializable {
 
     public Livro(String nomeLivro, Autor autor) {
         this.nomeLivro = nomeLivro;
-        //this.editora = editora;
+        // this.editora = editora;
         this.autor = autor;
+    }
+
+    public Livro() {
     }
 
     public Long getIdLivro() {

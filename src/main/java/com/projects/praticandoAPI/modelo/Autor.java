@@ -26,13 +26,16 @@ public class Autor implements Serializable {
 	@OneToMany(mappedBy = "autor")
 	private List<Livro> livros = new ArrayList<>();
 
-	//public Object idLivro;
+	// public Object idLivro;
 
-	//public Object idEditora;
+	// public Object idEditora;
 
 	public Autor(String nomeAutor, String nacionalidadeAutor) {
 		this.nomeAutor = nomeAutor;
 		this.nacionalidadeAutor = nacionalidadeAutor;
+	}
+
+	public Autor() {
 	}
 
 	public Long getIdAutor() {
