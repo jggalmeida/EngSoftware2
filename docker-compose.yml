@@ -15,6 +15,7 @@ services:
     environment:
       DB_HOST: database
     ports:
-      - "0.0.0.0:9090:9090"
+      "${MY_DOCKER_IP:-127.0.0.1}:9090:90"
+      # - "0.0.0.0:9090:9090"
 volumes:
   db-volume:
