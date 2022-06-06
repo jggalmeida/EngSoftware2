@@ -18,6 +18,9 @@ public class AutorDto {
 		this.nacionalidadeAutor = autor.getNacionalidadeAutor();
 	}
 
+	public AutorDto() {
+	}
+
 	public Long getIdAutor() {
 		return idAutor;
 	}

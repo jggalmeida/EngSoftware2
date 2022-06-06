@@ -16,6 +16,10 @@ public class LivroDto {
 		this.nomeLivro = livro.getNomeLivro();
 	}
 
+	public LivroDto(){
+		
+	}
+
 	public Long getIdLivro() {
 		return idLivro;
 	}

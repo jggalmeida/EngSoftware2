@@ -18,6 +18,10 @@ public class EditoraDto {
 		this.paisEditora = editora.getPaisEditora();
 	}
 
+	public EditoraDto(){
+		
+	}
+
 	public Long getIdEditora() {
 		return idEditora;
 	}
