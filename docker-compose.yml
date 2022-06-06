@@ -8,22 +8,14 @@ services:
       POSTGRES_DB: papi
     volumes:
     - db-volume:/var/lib/postgresql/data
-    networks:
-      - "bridge2"
 
   api:
-    # image: lelesd2m2s10/praticando-api
-    image: jgga/praticando-api
+    image: lelesd2m2s10/praticando-api
+    # image: jgga/praticando-api
     environment:
       DB_HOST: database
     ports:
       - "9090:9090"
-    networks:
-      - "bridge2"
-
-networks:
-  bridge2:
-    external: true
 
 volumes:
   db-volume:
