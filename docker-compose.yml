@@ -8,6 +8,7 @@ services:
       POSTGRES_DB: papi
     volumes:
     - db-volume:/var/lib/postgresql/data
+    network_mode: "host"
 
   api:
     # image: lelesd2m2s10/praticando-api
