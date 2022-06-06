@@ -24,12 +24,6 @@ import com.projects.praticandoAPI.repository.LivroRepository;
 @RequestMapping("/livros")
 public class LivroController {
 
-	//@Autowired
-	//private AutorRepository autorRepository;
-
-	// @Autowired
-	// private EditoraRepository editoraRepository;
-
 	 @Autowired
 	 private LivroRepository livroRepository;
 
@@ -39,8 +33,9 @@ public class LivroController {
 			List<Livro> livros = livroRepository.findAll();
 			return LivroDto.converter(livros);
 		} else {
-			List<Livro> livros = livroRepository.findAll();
-			return LivroDto.converter(livros);
+			//List<Livro> livros = livroRepository.findAll();
+			//return LivroDto.converter(livros);
+			return null;
 		}
 	}
 

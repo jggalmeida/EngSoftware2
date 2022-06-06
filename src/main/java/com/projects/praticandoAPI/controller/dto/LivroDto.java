@@ -17,7 +17,6 @@ public class LivroDto {
 	}
 
 	public LivroDto(){
-		
 	}
 
 	public Long getIdLivro() {

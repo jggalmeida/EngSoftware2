@@ -26,14 +26,14 @@ public class LivroTests {
     @Test
     public void criarNovoLivro() {
         LivroForm form = new LivroForm();
-        form.setNomeLivro("Pequeno");
+        form.setNomeLivro("Pequeno Principe");
             
         HttpEntity<LivroForm> httpEntity = new HttpEntity<>(form);
 
         ResponseEntity<LivroDto> response = this.testRestTemplate
                 .exchange("/livros", HttpMethod.POST, httpEntity, LivroDto.class);
 
-        //assertEquals(response.getStatusCode(), HttpStatus.CREATED);
+        assertEquals(response.getStatusCode(), HttpStatus.CREATED);
         assertEquals(response.getBody().getNomeLivro(), "Pequeno Principe");
     }
 

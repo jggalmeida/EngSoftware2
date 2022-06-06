@@ -24,14 +24,9 @@ import com.projects.praticandoAPI.repository.EditoraRepository;
 @RequestMapping("/editoras")
 public class EditoraController {
 
-	//@Autowired
-	//private AutorRepository autorRepository;
-
 	@Autowired
 	private EditoraRepository editoraRepository;
 
-	 //@Autowired
-	 //private LivroRepository livroRepository;
 
 	@GetMapping
 	public List<EditoraDto> lista(String nomeEditora) {

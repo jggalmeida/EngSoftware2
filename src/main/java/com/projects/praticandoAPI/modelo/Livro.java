@@ -26,10 +26,8 @@ public class Livro implements Serializable {
     @ManyToOne
     private Autor autor;
 
-    public Livro(String nomeLivro, Autor autor) {
+    public Livro(String nomeLivro) {
         this.nomeLivro = nomeLivro;
-        // this.editora = editora;
-        this.autor = autor;
     }
 
     public Livro() {
@@ -51,21 +49,6 @@ public class Livro implements Serializable {
         this.nomeLivro = nomeLivro;
     }
 
-    public Editora getEditora() {
-        return editora;
-    }
-
-    public void setEditora(Editora editora) {
-        this.editora = editora;
-    }
-
-    public Autor getAutor() {
-        return autor;
-    }
-
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
 
     @Override
     public int hashCode() {
