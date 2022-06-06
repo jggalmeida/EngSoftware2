@@ -3,7 +3,7 @@ version: '3'
 services:
   database:
     image: postgres
-    network_mode: default
+    network_mode: bridge2
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: papi
@@ -13,12 +13,15 @@ services:
   api:
     # image: lelesd2m2s10/praticando-api
     image: jgga/praticando-api
-    network_mode: default
+    network_mode: bridge2
     environment:
       DB_HOST: database
     ports:
       - "9090:9090"
 
+networks:
+  bridge2:
+    external: true
 
 volumes:
   db-volume:
