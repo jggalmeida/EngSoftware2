@@ -10,7 +10,7 @@ services:
     volumes:
     - db-volume:/var/lib/postgresql/data
     networks:
-      - bridge2
+      - "bridge2"
 
   api:
     # image: lelesd2m2s10/praticando-api
@@ -20,7 +20,7 @@ services:
     ports:
       - "9090:9090"
     networks:
-      - bridge2
+      - "bridge2"
 
 networks:
   bridge2:
